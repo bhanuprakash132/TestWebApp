@@ -20,10 +20,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build TestApp.sln --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
-
+      
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
